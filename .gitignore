@@ -1,4 +1,8 @@
+node_modules/
 .env
-node_modules
-vendor
+.env.*
+vendor/
 *.log
+.git
+docker-compose.override.yml
+
