@@ -1,8 +1,8 @@
-##DevOps Pet Project
+**DevOps Pet Project**
 
-##📌 Overview
+**📌 Overview**
 
-##This project demonstrates a full-stack application deployed with Docker.
+This project demonstrates a full-stack application deployed with Docker.
 
 Stack:
 
@@ -13,14 +13,14 @@ Stack:
 
 
 
-##🏗 Architecture
+**🏗 Architecture**
 
 Browser → Nginx → Frontend
                 → Backend (PHP-FPM)
 
 
 
-##🚀 Run locally
+**🚀 Run locally**
 
 docker-compose up -d --build
 
@@ -30,7 +30,7 @@ http://localhost:8080
 
 
 
-##🔧 Services
+**🔧 Services**
 
 Service| Description
 nginx| reverse proxy
@@ -39,13 +39,13 @@ mysql| database
 
 
 
-##📡 API
+**📡 API**
 
 GET /backend/index.php
 
 
 
-##⚙️ Tech Stack
+**⚙️ Tech Stack**
 
 - Docker
 - Docker Compose
@@ -55,18 +55,18 @@ GET /backend/index.php
 
 
 
-##📈 Next Steps
+**📈 Next Steps**
 
 - CI/CD (GitHub Actions)
 - Monitoring (Prometheus + Grafana)
 - Kubernetes deployment
 
-##Known Issues
+**Known Issues**
  
 - Free domain (realhost-free.net) does not suppotr custom ports
 - Domain routing works only on port 80/443
 
-##What I learned
+**What I learned**
 
 - How Nginx works with PHP-FPM
 - Difference between root and alias
