@@ -11,14 +11,14 @@ Stack:
 - MySQL (database)
 - Frontend (SPA)
 
----
+
 
 ##🏗 Architecture
 
 Browser → Nginx → Frontend
                 → Backend (PHP-FPM)
 
----
+
 
 ##🚀 Run locally
 
@@ -28,7 +28,7 @@ Open:
 
 http://localhost:8080
 
----
+
 
 ##🔧 Services
 
@@ -37,13 +37,13 @@ nginx| reverse proxy
 php-fpm| backend
 mysql| database
 
----
+
 
 ##📡 API
 
 GET /backend/index.php
 
----
+
 
 ##⚙️ Tech Stack
 
@@ -53,7 +53,7 @@ GET /backend/index.php
 - PHP
 - MySQL
 
----
+
 
 ##📈 Next Steps
 
