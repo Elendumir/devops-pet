@@ -17,9 +17,9 @@ jobs:
 
       - name: Create .env
         run: | 
-          echo: "DB_HOST=mysql" >> .env
-          echo: "DB_USER=root" >> .env
-          echo: "DB_PASSWORD=secret" >> .env
+          echo "DB_HOST=mysql" >> .env
+          echo "DB_USER=root" >> .env
+          echo "DB_PASSWORD=secret" >> .env
           
       - name: Run
         run: docker compose up -d
