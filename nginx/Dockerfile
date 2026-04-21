@@ -4,3 +4,4 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx/default.conf /etc/nginx/conf.d/
 
 COPY frontend /var/www/frontend
+COPY backend /var/www/backend

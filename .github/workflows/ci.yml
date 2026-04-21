@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: docker-compose build
+
+      - name: Run
+        run: docker-compose up -d
+
+      - name: Wait for app
+        run: sleep 5
+
+      - name: Test backend
+        run: curl http://localhost:8080/backend/index.php
+
+      - name: Down
+        run: docker-compose down
