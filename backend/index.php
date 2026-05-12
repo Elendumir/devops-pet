@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=UTF-8");
 
 // Параметри підключення
-$host = "mysql";
+$host = "mysql-service";
 $dbname = "devops_db";
 $username = "devops";
 $password = "1234"; // MAMP за замовчуванням

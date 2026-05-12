@@ -37,7 +37,7 @@ jobs:
       - name: Test backend
         run: curl -f  http://localhost:8080/backend/index.php
         
-      - name: Show logs
+      - name: Show logs on failure
         if: failure()
         run: docker compose logs
         

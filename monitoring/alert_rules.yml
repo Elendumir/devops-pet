@@ -1,0 +1,30 @@
+groups:
+  - name: devops-pet
+    rules:
+
+      # 🚨 Container DOWN
+      - alert: ContainerDown
+        expr: probe_success == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Container is down"
+
+      # 🔥 High CPU
+      - alert: HighCPU
+        expr: rate(container_cpu_usage_seconds_total{container!="", image!=""}[1m]) > 0.5
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage"
+
+      # ❌ Service DOWN
+      - alert: ServiceDown
+        expr: up == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.job }} is not responding"
