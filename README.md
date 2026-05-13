@@ -48,7 +48,7 @@ This application could save your comments. The application includes:
 - Alertmanager
 - Blackbox Exporter
 
-##Docker
+## Docker
 
 The frontend is delivered as static Angular build files and served through Nginx.
 
@@ -59,7 +59,7 @@ Containers used in the project:
 - mysql database
 - monitoring stack
 
-##Kubernetes
+## Kubernetes
 
 The application is deployed into a K3s Kubernetes cluster.
 
@@ -73,7 +73,7 @@ Resources used:
 
 Traefik is used as the ingress controller.
 
-##HTTPS
+## HTTPS
 
 HTTPS is configured using:
 
@@ -83,7 +83,7 @@ HTTPS is configured using:
 
 The application automatically receives TLS certificates.
 
-##Monitoring Stack
+## Monitoring Stack
 
 The monitoring system includes:
 
@@ -119,7 +119,7 @@ GitHub Actions pipeline performs:
 - Push images
 - Deploy application
 
-##DevOps Concepts Demonstrated
+## DevOps Concepts Demonstrated
 - Containerization
 - Reverse proxy configuration
 - Kubernetes ingress routing
@@ -130,7 +130,7 @@ GitHub Actions pipeline performs:
 - Infrastructure troubleshooting
 - Production-like deployment workflow
    
-##Troubleshooting Experience
+## Troubleshooting Experience
 
 During development and deployment the following issues were debugged:
 
@@ -142,13 +142,13 @@ During development and deployment the following issues were debugged:
 - HTTPS validation problems
 - Kubernetes service communication
 
-##Future Improvements
+## Future Improvements
 - Terraform infrastructure provisioning
 - Helm charts
 - Production cloud deployment
 - Automated rollback strategy
 
-##Result
+## Result
 
 This project demonstrates a production-like DevOps environment with:
 
