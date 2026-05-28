@@ -67,6 +67,12 @@ Containers used in the project:
 
 The application is deployed into a K3s Kubernetes cluster.
 
+```bash
+gh repo clone Elendumir/devops-pet
+cd k8s
+kubectl apply -f .
+```
+
 Resources used:
 
 - Deployments
@@ -115,13 +121,13 @@ Sends alerts to Telegram.
 
 Performs HTTP endpoint monitoring.
 
-
 ## Screenshots
+
 ### Aplications
 
 App on VPS
 
-![APP](monitoring/screenshots/app.png)
+![App](monitoring/screenshots/app.png)
 
 ### Grafana
 
@@ -139,7 +145,7 @@ Here You can see dashbords from Grafana which includes:
 
 
 
-**CI/CD**
+## CI/CD
 
 GitHub Actions pipeline performs:
 
