@@ -16,6 +16,10 @@ This application could save your comments. The application includes:
 - Monitoring and logging stack
 - CI/CD pipeline for Docker Compose
 
+## Live Demo
+
+https://www.5va6np.realhost-free.net
+
 ## Stack
  **Frontend**
  - Angular
@@ -110,6 +114,30 @@ Sends alerts to Telegram.
 **Blackbox Exporter**
 
 Performs HTTP endpoint monitoring.
+
+
+## Screenshots
+### Aplications
+
+App on VPS
+
+![APP](monitoring/screenshots/app.png)
+
+### Grafana
+
+Here You can see dashbords from Grafana which includes:
+- Cpu
+![Grafana](monitoring/screenshots/CPU.png) 
+- Cpu host
+![Grafana](monitoring/screenshots/CPU_Host.png)
+- Ram host
+![Grafana](monitoring/screenshots/RAM_Host.png)
+- Number of containers
+![Grafana](monitoring/screenshots/Containers.png)
+- Node Exporter
+![Grafana](monitoring/screenshots/Node_Exporter.png)
+
+
 
 **CI/CD**
 
