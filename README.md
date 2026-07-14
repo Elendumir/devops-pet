@@ -1,11 +1,11 @@
 ## DevOps Pet Project
 
-Production-like full-stack application deployment with Docker and Kubernetes.
+ Full-stack application deployment with Docker and Kubernetes.
 
 ## Overview
 
 This project demonstrates a complete DevOps workwlow for deploying and monitoring a full-stack application.
-This application could save your comments. The application includes:
+A simple full-stack web application that allows users to submit and store comments. The application includes:
 
 - Angular frontend
 - PHP backend
