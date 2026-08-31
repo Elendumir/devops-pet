@@ -7,8 +7,8 @@ route:
 receivers:
   - name: telegram
     telegram_configs:
-      - bot_token: "8601261719:AAGOVcB3vMGwGPnK4c3bERxgTAYbWWTdqf8" 
-        chat_id: 338396081
+      - bot_token: "-" 
+        chat_id: -
         parse_mode: HTML
         send_resolved: true
         message: |
