@@ -16,37 +16,31 @@ A simple full-stack web application that allows users to submit and store commen
 
 https://www.5va6np.realhost-free.net
 
+## Architecture
+
+![Architecture](monitoring/screenshots/archi.png)
+
+
 ## Technology Stack
- **Frontend**
- - Angular
- - Nginx
 
- **Backend**
- - PHP
 
-**Database**
-- MySQL
+ | Area                      | Technologies            |
+| ------------------------- | ----------------------- |
+| Frontend                  | Angular, Nginx          |
+| Backend                   | PHP                     |
+| Database                  | MySQL                   |
+| Containers                | Docker, Docker Compose  |
+| Orchestration             | Kubernetes, K3s         |
+| Ingress                   | Traefik                 |
+| TLS                       | Let's Encrypt, ACME     |
+| CI/CD                     | GitHub Actions          |
+| Metrics                   | Prometheus              |
+| Visualization             | Grafana                 |
+| Logging                   | Loki, Promtail          |
+| Alerting                  | Alertmanager, Telegram  |
+| Infrastructure monitoring | Node Exporter, cAdvisor |
+| Endpoint monitoring       | Blackbox Exporter       |
 
-**Containerzation**
-- Docker
-- Docker Compose
-
-**Kubernetes**
-- K3s
-- Traefik Ingress
-- TLS/HTTPS
-
-**CI/CD**
-- GitHub Actions
-
-**Monitoring**
-- Prometheus
-- Grafana
-- Loki
-- Promtail
-- Cadvisor
-- Alertmanager
-- Blackbox Exporter
 
 ## Docker
 
@@ -61,61 +55,93 @@ Containers used in the project:
 
 ## Kubernetes
 
-The application is deployed into a K3s Kubernetes cluster.
+The application is deployed to a lightweight K3s Kubernetes cluster.
+Kubernetes resources are defined as plain YAML manifests in the k8s/ directory.
+Traefik is used as the ingress controller.
+
+Kubernetes resources:
+Nginx Deployment
+Nginx Service
+PHP Deployment
+PHP Service
+MySQL configuration
+Ingress
+
+Deploy to Kubernetes
 
 ```bash
 gh repo clone Elendumir/devops-pet
+cd devops-pet
 cd k8s
 kubectl apply -f .
 ```
 
-Resources used:
 
-- Deployments
-- Services
-- Ingress
-- TLS certificates
-- Monitoring namespace
+## HTTPS/TLS
 
-Traefik is used as the ingress controller.
+External traffic is served over HTTPS using:
 
-## HTTPS
+Traefik as the Kubernetes Ingress Controller
+Let's Encrypt for certificates
+ACME for certificate issuance
 
-HTTPS is configured using:
+This allows the application to obtain and use trusted TLS certificates instead of relying on manually generated certificates.
 
-- Traefik
-- Let's Encrypt
-- ACME challenge
+## Monitoring & Observability
 
-The application automatically receives TLS certificates.
+The project includes both metrics and centralized logging.
 
-## Monitoring Stack
+**Metrics**
 
-The monitoring system includes:
+Prometheus collects metrics from the infrastructure and monitoring exporters.
 
-**Prometheus**
+Metrics sources include:
 
-Collects metrics from services and infrastructure.
+Node Exporter — host-level metrics
+cAdvisor — container metrics
+Blackbox Exporter — HTTP endpoint availability
+Visualization
 
-**Grafana**
+Grafana is used to visualize the collected metrics through dashboards.
 
-Visualizes metrics and dashboards.
+Example dashboard information includes:
 
-**Loki**
+- CPU usage
+- host CPU usage
+- RAM usage
+- container count
+- Node Exporter metrics
 
-Centralized log aggregation.
+**Logging**
 
-**Promtail**
+Container logs are collected by Promtail and sent to Loki.
+Docker containers
+       │
+       ▼
+    Promtail
+       │
+       ▼
+      Loki
+       │
+       ▼
+    Grafana
 
-Collects container logs.
+**Alerting**
 
-**Alertmanager**
+Prometheus evaluates alert rules and sends firing alerts to Alertmanager.
+Prometheus
+    │
+    ▼
+Alertmanager
+    │
+    ▼
+ Telegram
 
-Sends alerts to Telegram.
 
-**Blackbox Exporter**
+## Project Structure
 
-Performs HTTP endpoint monitoring.
+![Structure](monitoring/screenshots/stru.png)
+
 
 ## Screenshots
 
@@ -139,16 +165,6 @@ Here You can see dashbords from Grafana which includes:
 - Node Exporter
 ![Grafana](monitoring/screenshots/Node_Exporter.png)
 
-
-
-## CI/CD
-
-GitHub Actions pipeline performs:
-
-- Build containers
-- Push images
-- Deploy application
-
    
 ## Troubleshooting Experience
 
@@ -161,9 +177,10 @@ During development and deployment the following issues were debugged:
 - Nginx reverse proxy issues
 - HTTPS validation problems
 - Kubernetes service communication
+The troubleshooting experience was an important part of the project because the goal was not only to deploy the stack, but also to understand how to diagnose failures across different layers.
+
 
 ## Future Improvements
-- Terraform infrastructure provisioning
 - Helm charts
 - Production cloud deployment
 - Automated rollback strategy
