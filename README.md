@@ -140,7 +140,7 @@ Alertmanager
 
 ## Project Structure
 
-![Stru](monitoring/screenshots/stru.png)
+![Structure](monitoring/screenshots/stru.png)
 
 
 ## Screenshots
