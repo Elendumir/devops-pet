@@ -1,9 +1,5 @@
 ## DevOps Pet Project
 
- Full-stack application deployment with Docker and Kubernetes.
-
-## Overview
-
 This project demonstrates a complete DevOps workwlow for deploying and monitoring a full-stack application.
 A simple full-stack web application that allows users to submit and store comments. The application includes:
 
@@ -20,7 +16,7 @@ A simple full-stack web application that allows users to submit and store commen
 
 https://www.5va6np.realhost-free.net
 
-## Stack
+## Technology Stack
  **Frontend**
  - Angular
  - Nginx
@@ -153,16 +149,6 @@ GitHub Actions pipeline performs:
 - Push images
 - Deploy application
 
-## DevOps Concepts Demonstrated
-- Containerization
-- Reverse proxy configuration
-- Kubernetes ingress routing
-- TLS termination
-- Monitoring and alerting
-- Log aggregation
-- CI/CD automation
-- Infrastructure troubleshooting
-- Production-like deployment workflow
    
 ## Troubleshooting Experience
 
