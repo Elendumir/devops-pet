@@ -4,8 +4,10 @@ metadata:
   name: devops-pet-ingress
 
 spec:
+  ingressClassName: traefik
+  
   rules:
-    - host: devops.local
+    - host: www.5va6np.realhost-free.net
       http:
         paths:
           - path: /
